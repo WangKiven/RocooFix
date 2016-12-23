@@ -53,7 +53,7 @@ class RocooFixPlugin implements Plugin<Project> {
                 variants.all { variant ->
 
 
-                    if(!variant.getBuildType().isMinifyEnabled()){
+                    if (!variant.getBuildType().isMinifyEnabled()) {
                         println("不支持不开混淆的情况")
                         return;
                     }
@@ -63,7 +63,6 @@ class RocooFixPlugin implements Plugin<Project> {
                     def dexTask = project.tasks.findByName(RocooUtils.getDexTaskName(project, variant))
                     def proguardTask = project.tasks.findByName(RocooUtils.getProGuardTaskName(project, variant))
 //                    def processManifestTask = project.tasks.findByName(RocooUtils.getProcessManifestTaskName(project, variant))
-
 
 
                     def manifestFile = variant.outputs.processManifest.manifestOutputFile[0]
@@ -217,9 +216,9 @@ class RocooFixPlugin implements Plugin<Project> {
                                                         def bytes = NuwaProcessor.processClass(inputClassFile)
 
 
-                                                        if("\\".equals(File.separator)){
+                                                        if ("\\".equals(File.separator)) {
                                                             classPath = classPath.split("${dirName}\\\\")[1]
-                                                        }else{
+                                                        } else {
                                                             classPath = classPath.split("${dirName}/")[1]
                                                         }
 

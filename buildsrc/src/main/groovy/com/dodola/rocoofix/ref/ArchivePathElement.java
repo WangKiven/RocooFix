@@ -12,10 +12,13 @@ import java.util.zip.ZipFile;
 class ArchivePathElement implements ClassPathElement {
     static class DirectoryEntryException extends IOException {
     }
+
     private final ZipFile archive;
+
     public ArchivePathElement(ZipFile archive) {
         this.archive = archive;
     }
+
     @Override
     public InputStream open(String path) throws IOException {
         ZipEntry entry = archive.getEntry(path);
@@ -27,10 +30,12 @@ class ArchivePathElement implements ClassPathElement {
             return archive.getInputStream(entry);
         }
     }
+
     @Override
     public void close() throws IOException {
         archive.close();
     }
+
     @Override
     public Iterable<String> list() {
         return new Iterable<String>() {
@@ -39,6 +44,7 @@ class ArchivePathElement implements ClassPathElement {
                 return new Iterator<String>() {
                     Enumeration<? extends ZipEntry> delegate = archive.entries();
                     ZipEntry next = null;
+
                     @Override
                     public boolean hasNext() {
                         while (next == null && delegate.hasMoreElements()) {
@@ -49,6 +55,7 @@ class ArchivePathElement implements ClassPathElement {
                         }
                         return next != null;
                     }
+
                     @Override
                     public String next() {
                         if (hasNext()) {
@@ -59,6 +66,7 @@ class ArchivePathElement implements ClassPathElement {
                             throw new NoSuchElementException();
                         }
                     }
+
                     @Override
                     public void remove() {
                         throw new UnsupportedOperationException();

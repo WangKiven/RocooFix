@@ -8402,6 +8402,14 @@ android.support.v7.widget.ViewUtils -> android.support.v7.widget.dv:
     void computeFitSystemWindows(android.view.View,android.graphics.Rect,android.graphics.Rect) -> a
     void makeOptionalFitsSystemWindows(android.view.View) -> b
     void <clinit>() -> <clinit>
+com.dodola.rocoofix.BuildConfig -> com.dodola.rocoofix.BuildConfig:
+    boolean DEBUG -> DEBUG
+    java.lang.String APPLICATION_ID -> APPLICATION_ID
+    java.lang.String BUILD_TYPE -> BUILD_TYPE
+    java.lang.String FLAVOR -> FLAVOR
+    int VERSION_CODE -> VERSION_CODE
+    java.lang.String VERSION_NAME -> VERSION_NAME
+    void <init>() -> <init>
 com.dodola.rocoofix.ClassLoaderHack -> com.dodola.rocoofix.ClassLoaderHack:
     boolean isArt -> isArt
     java.lang.reflect.Method findClassMethod -> findClassMethod
@@ -8431,9 +8439,6 @@ com.dodola.rocoofix.RocooFix -> com.dodola.rocoofix.RocooFix:
     void applyPatch(android.content.Context,java.lang.String) -> applyPatch
     android.content.pm.ApplicationInfo getApplicationInfo(android.content.Context) -> getApplicationInfo
     void installDexes(java.lang.ClassLoader,java.io.File,java.util.List) -> installDexes
-    java.lang.reflect.Field findField(java.lang.Object,java.lang.String) -> findField
-    java.lang.reflect.Method findMethod(java.lang.Object,java.lang.String,java.lang.Class[]) -> findMethod
-    void expandFieldArray(java.lang.Object,java.lang.String,java.lang.Object[]) -> expandFieldArray
     java.io.File getDexDir(android.content.Context,android.content.pm.ApplicationInfo) -> getDexDir
     void mkdirChecked(java.io.File) -> mkdirChecked
     java.lang.String copyAsset(android.content.Context,java.lang.String,java.io.File) -> copyAsset
@@ -8443,9 +8448,6 @@ com.dodola.rocoofix.RocooFix -> com.dodola.rocoofix.RocooFix:
     void fixClass(java.lang.Class,java.lang.ClassLoader) -> fixClass
     java.lang.Class initTargetClass(java.lang.Class) -> initTargetClass
     void replaceMethod(java.lang.Class,java.lang.reflect.Method,java.lang.ClassLoader) -> replaceMethod
-    java.lang.reflect.Field access$500(java.lang.Object,java.lang.String) -> access$500
-    java.lang.reflect.Method access$600(java.lang.Object,java.lang.String,java.lang.Class[]) -> access$600
-    void access$700(java.lang.Object,java.lang.String,java.lang.Object[]) -> access$700
     void <clinit>() -> <clinit>
 com.dodola.rocoofix.RocooFix$1 -> com.dodola.rocoofix.RocooFix$1:
     dalvik.system.DexFile val$dexFile -> val$dexFile
@@ -8473,6 +8475,30 @@ com.dodola.rocoofix.RocooFix$V4 -> com.dodola.rocoofix.RocooFix$V4:
     void <init>() -> <init>
     void install(java.lang.ClassLoader,java.util.List) -> install
     void access$400(java.lang.ClassLoader,java.util.List) -> access$400
+com.dodola.rocoofix.RocooSoFix -> com.dodola.rocoofix.RocooSoFix:
+    java.lang.String TAG -> TAG
+    void <init>() -> <init>
+    void applyPatch(android.content.Context,java.lang.String) -> applyPatch
+    android.content.pm.ApplicationInfo getApplicationInfo(android.content.Context) -> getApplicationInfo
+    void installSoDir(java.lang.ClassLoader,java.io.File) -> installSoDir
+com.dodola.rocoofix.RocooSoFix$V14 -> com.dodola.rocoofix.RocooSoFix$V14:
+    void <init>() -> <init>
+    void install(java.lang.ClassLoader,java.io.File) -> install
+    void access$100(java.lang.ClassLoader,java.io.File) -> access$100
+com.dodola.rocoofix.RocooSoFix$V23 -> com.dodola.rocoofix.RocooSoFix$V23:
+    void <init>() -> <init>
+    void install(java.lang.ClassLoader,java.io.File) -> install
+    void access$000(java.lang.ClassLoader,java.io.File) -> access$000
+com.dodola.rocoofix.RocooSoFix$V4 -> com.dodola.rocoofix.RocooSoFix$V4:
+    void <init>() -> <init>
+    void install(java.lang.ClassLoader,java.io.File) -> install
+    void access$200(java.lang.ClassLoader,java.io.File) -> access$200
+com.dodola.rocoofix.RocooUtils -> com.dodola.rocoofix.RocooUtils:
+    void <init>() -> <init>
+    java.lang.reflect.Field findField(java.lang.Object,java.lang.String) -> findField
+    java.lang.reflect.Method findMethod(java.lang.Object,java.lang.String,java.lang.Class[]) -> findMethod
+    void expandFieldArray(java.lang.Object,java.lang.String,java.lang.Object[]) -> expandFieldArray
+    java.lang.Object[] makePathElements(java.lang.Object,java.util.ArrayList,java.io.File,java.util.ArrayList) -> makePathElements
 com.dodola.rocoosample.HelloHack -> com.dodola.rocoosample.a:
     void <init>() -> <init>
     java.lang.String showHello() -> a
